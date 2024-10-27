@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Food Cart</title>
+    <link rel="stylesheet" href="css/tailwind.min.css">
+
+</head>
+<body class="bg-gray-100 font-sans">
+    <!-- Navigation Bar -->
+    <nav class="bg-white p-4 shadow-md flex justify-center items-center space-x-8">
+        <a href="#" class="text-gray-600 hover:text-black">Menu</a>
+        <a href="#" class="text-gray-600 hover:text-black">Rewards</a>
+        <a href="#" class="text-gray-600 hover:text-black">Locations</a>
+        <a href="#" class="text-gray-600 hover:text-black">Gift Cards</a>
+        <a href="#" class="text-gray-600 hover:text-black">Log In</a>
+        
+        <!-- Cart Icon with Item Count -->
+        <div class="relative ml-4">
+            <button onclick="toggleCart()" class="text-gray-600 focus:outline-none">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h18l-1.68 9.72a2 2 0 01-1.97 1.66H7.64a2 2 0 01-1.97-1.66L4 3z"></path>
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 21H8m2-5h4"></path>
+                </svg>
+            </button>
+            <!-- Item Count Badge -->
+            <span id="cart-count" class="absolute -top-2 -right-2 bg-red-500 text-white text-xs w-5 h-5 rounded-full flex items-center justify-center">0</span>
+        </div>
+    </nav>
+
+    <!-- Main Container -->
+    <div class="flex mt-8">
+        <!-- Food Items Section -->
+        <div class="w-2/3 p-8">
+            <h2 class="text-2xl font-bold mb-4">Food Menu</h2>
+            <div id="food-items" class="grid grid-cols-3 gap-4">
+                <!-- Food items dynamically rendered here -->
+            </div>
+        </div>
+
+        <!-- Cart Sidebar -->
+        <div id="cart-sidebar" class="w-1/4 bg-white p-6 shadow-lg h-full fixed right-0 top-0 transform translate-x-full transition-transform">
+            <div class="flex justify-between items-center mb-4">
+                <h2 id="cart-header" class="text-xl font-bold">Your Cart</h2>
+                <button onclick="closeSidebar()" class="text-gray-500 text-2xl">&times;</button>
+            </div>
+            <div id="cart-items" class="space-y-4">
+                <!-- Cart items dynamically rendered here -->
+            </div>
+            <div class="border-t mt-4 pt-4">
+                <h3 class="text-lg font-semibold">Total: $<span id="total-price">0.00</span></h3>
+            </div>
+        </div>
+    </div>
+
+    <!-- JavaScript File -->
+    <script src="script.js"></script>
+</body>
+</html>
